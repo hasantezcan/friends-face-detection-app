@@ -1,0 +1,39 @@
+body{
+    color: white;
+    background-color:black;
+}
+.center{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    width: 100vh;
+    position: relative;
+    top: -10px;
+    margin-top: 2vh;
+}
+
+.description{
+    display: flex;
+    justify-content: center;
+}
+
+.button{
+    justify-content: center;
+    display: grid;
+}
+
+.upload-btn {
+    border: none;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    position: relative;
+    width: 17vh;
+    top: -12vh;
+    left: 20.5vh;
+    background-color: #8458A7;
+    opacity: 1.5;
+}
