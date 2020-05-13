@@ -3,16 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friends AppS</title>
+    <script defer src="face-api.min.js"></script>
+    <script defer src="script.js"></script>
+    <title>Friends Face Detection</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
 <body>
     <div class="center">
-        <img class="logo" src="img/friendslogo.jpg" width="800px" alt="friends-logo" />
-        <p class="description" >Detect your 'friends' character</p>
+        <a href="https://www.imdb.com/title/tt0108778/">
+            <img class="logo" src="img/friendslogo.jpg" width="800px" alt="friends-logo" />
+        </a>
+        
+        <p class="description">Detect your 'friends' character</p>
         <div class="button">
-            <img  src="img/door.png" width="500px" alt="friends-logo" />
-            <button class="upload-btn" type="button"> Upload image </button>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="imageUpload" >
+                <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Upload image</label>
+            </div>
+            <!-- <img src="img/door.png" width="500px" alt="friends-logo" /> -->
         </div>
     </div>
 </body>
 </html>
+

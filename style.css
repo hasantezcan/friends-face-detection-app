@@ -1,7 +1,33 @@
-body{
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     color: white;
     background-color:black;
 }
+
+.result-image {
+    margin-top: 3vh;
+
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vh;
+}
+
+img {
+    align-items: center; 
+    width: 50vh;
+}
+
 .center{
     display: grid;
     align-items: center;
@@ -11,8 +37,7 @@ body{
 .logo{
     width: 100vh;
     position: relative;
-    top: -10px;
-    margin-top: 2vh;
+    margin-top: 2 vh;
 }
 
 .description{
@@ -23,17 +48,4 @@ body{
 .button{
     justify-content: center;
     display: grid;
-}
-
-.upload-btn {
-    border: none;
-    text-decoration: none;
-    color: white;
-    display: inline-block;
-    position: relative;
-    width: 17vh;
-    top: -12vh;
-    left: 20.5vh;
-    background-color: #8458A7;
-    opacity: 1.5;
 }
