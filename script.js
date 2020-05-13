@@ -1,5 +1,7 @@
 const imageUpload = document.getElementById('imageUpload')
-const localhost = 'http://127.0.0.1:5500/'
+
+// for local fetch
+//const localhost = 'http://127.0.0.1:5500/' 
 
 Promise.all([
     faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
@@ -29,8 +31,13 @@ async function start() {
         container.append(canvas)
         const displaySize = { width: image.width, height: image.height }
         faceapi.matchDimensions(canvas, displaySize)
-        const detections = await faceapi.detectAllFaces(image).withFaceLandmarks().withFaceDescriptors()
+
+        const detections = await faceapi
+        .detectAllFaces(image)
+        .withFaceLandmarks()
+        .withFaceDescriptors()
         const resizedDetections = faceapi.resizeResults(detections, displaySize)
+
         const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor))
         results.forEach((result, i) => {
             const box = resizedDetections[i].detection.box
@@ -50,14 +57,18 @@ function loadLabeledImages() {
         'Phoebe Buffay',
         // 'Gunther',
         // 'Janice'
-
     ]
 
     return Promise.all(
         labels.map(async label => {
             const descriptions = []
             for (let i = 1; i <= 3; i++) {
-                const img = await faceapi.fetchImage(`${localhost}/img/faces/${label}/${i}.jpg`)
+                // local fetch
+                // const img = await faceapi.fetchImage(`${localhost}/img/faces/${label}/${i}.jpg`)
+
+                // github fetch
+                const img = await faceapi.fetchImage(`https://raw.githubusercontent.com/hasantezcan/friends-face-detection-app/master/img/faces/${label}/${i}.jpg`)
+
 
                 const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
                 descriptions.push(detections.descriptor)
